@@ -3,6 +3,7 @@
 #include <cpr/cpr.h>
 #include <magic_enum.hpp>
 #include <nlohmann/json.hpp>
+#include <scapix/bridge/object.h>
 
 #include <iostream>
 #include <optional>

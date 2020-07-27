@@ -101,7 +101,5 @@ int main() {
 
     std::cout << list.dump();
 
-//    std::cout << (fetcher.Fetch()).dump();
-
     return 0;
 }
