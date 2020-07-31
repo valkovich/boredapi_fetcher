@@ -3,10 +3,6 @@ project(demonstration)
 
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(cpr CONFIG REQUIRED)
-find_package(nlohmann_json CONFIG REQUIRED)
-find_package(magic_enum CONFIG REQUIRED)
-
 add_subdirectory(lib)
 
 add_executable(test src/main.cpp)
