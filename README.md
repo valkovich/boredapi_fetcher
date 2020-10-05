@@ -15,7 +15,7 @@ Requirements for success:
 
 Note: the UI frontend is only to demonstrate how the native platform code, ie: swift, Kotlin/java & javascript interact with the C++ code that is written.
 
-####Repo will be updated tommorow.
+#### Repo will be updated tommorow.
 
 What's missed in library: 1) data validation 2) tests 3) documentation 4) closing of all TODOes.
 
