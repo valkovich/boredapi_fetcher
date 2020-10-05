@@ -19,7 +19,7 @@ Note: the UI frontend is only to demonstrate how the native platform code, ie: s
 
 What's missed in library: 1) data validation 2) tests 3) documentation 4) closing of all TODOes.
 
-##Multiplatform
+## Multiplatform
 - [Scapix](https://www.scapix.com) will be used. It can automatically create bridge files for  all platforms.
 It converts C++ data types to Kotlin, OBJ C, JS data types. And also it perfectly fits in CMake projects. So, I use the following algorithm to build a portable library.
 
