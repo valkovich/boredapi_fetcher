@@ -3,14 +3,14 @@
 namespace Fetcher {
 void from_json(const json &j, Activity &p) {
   j.at("activity").get_to(p.name);
-  j.at("accessibility").get_to(p.accesibility);
+  j.at("accessibility").get_to(p.accessibility);
   j.at("type").get_to(p.type);
   j.at("price").get_to(p.price);
   j.at("key").get_to(p.key);
 }
 
 void to_json(json &j, const Activity &p) {
-  j = json{{"activity", p.name}, {"accessibility", p.accesibility},
+  j = json{{"activity", p.name}, {"accessibility", p.accessibility},
            {"type", p.type},     {"participants", p.participants},
            {"price", p.price},   {"key", p.key}};
 }

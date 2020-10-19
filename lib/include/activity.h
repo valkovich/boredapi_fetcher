@@ -6,8 +6,9 @@
 using nlohmann::json;
 
 namespace Fetcher {
-enum class ActivityType {
-  education,
+
+enum class ActivityType : size_t {
+  education = 0,
   recreational,
   social,
   diy,
@@ -20,16 +21,13 @@ enum class ActivityType {
 };
 
 struct Activity {
- public:
-  std::string name;
-  float accesibility;
-  std::string type;
+  std::string name, type, key;
+  float accessibility, price;
   int participants;
-  float price;
-  std::string key;
 };
 
 void from_json(const json &j, Activity &p);
 void to_json(json &j, const Activity &p);
 std::string to_string(const Activity &temp);
+
 }  // namespace Fetcher

@@ -107,6 +107,8 @@ float DataFetcher::GetMinAccessibility() const {
 nlohmann::json DataFetcher::Fetch() {
   cpr::Parameters fetch_params;
 
+  fetch_params.AddParameter({"hello, world!"});
+
   if (this->key) {
     fetch_params.AddParameter({"key", std::to_string(*this->key)});
   }

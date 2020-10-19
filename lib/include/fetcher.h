@@ -1,20 +1,41 @@
 #pragma once
 
+#include <activity.h>
 #include <cpr/cpr.h>
-#include <magic_enum.hpp>
-#include <nlohmann/json.hpp>
 
 #include <iostream>
+#include <magic_enum.hpp>
+#include <nlohmann/json.hpp>
 #include <optional>
 #include <string_view>
-
-#include <activity.h>
 
 using nlohmann::json;
 using Response = cpr::Response;
 
 namespace Fetcher {
+
 class DataFetcher {
+  static std::optional<Response> MakeRequest(std::string_view key_name,
+                                             std::string_view value);
+  static std::optional<Response> MakeRequest(std::string_view first_name,
+                                             std::string_view first_value,
+                                             std::string_view second_name,
+                                             std::string_view second_value);
+
+  static json MakeJson(cpr::Response response);
+
+  void CleanSetup();
+
+  nlohmann::json json_response;
+  cpr::Response response;
+
+  std::optional<ActivityType> type;
+
+  std::optional<float> price, min_price, max_price;
+
+  std::optional<int> key, participants, accessibility, min_accessibility,
+      max_accessibility;
+
  public:
   void SetKey(int temp_key);
   [[nodiscard]] int GetKey() const;
@@ -56,27 +77,6 @@ class DataFetcher {
       float req_accessibility);
   static std::optional<json> GetActivityByAccessibilityRange(
       float min_accessibility, float max_accessibility);
-
- private:
-  static std::optional<Response> MakeRequest(std::string_view key_name,
-                                             std::string_view value);
-  static std::optional<Response> MakeRequest(std::string_view first_name,
-                                             std::string_view first_value,
-                                             std::string_view second_name,
-                                             std::string_view second_value);
-
-  static json MakeJson(cpr::Response response);
-
-  void CleanSetup();
-
-  nlohmann::json json_response;
-  cpr::Response response;
-
-  std::optional<ActivityType> type;
-
-  std::optional<float> price, min_price, max_price;
-
-  std::optional<int> key, participants, accessibility, min_accessibility,
-      max_accessibility;
 };
+
 }  // namespace Fetcher
