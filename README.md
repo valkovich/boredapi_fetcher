@@ -29,7 +29,7 @@ It converts C++ data types to Kotlin, OBJ C, JS data types. And also it perfectl
 And CMake will make the all the rest work for me. It will generate static lib files and launch Scapix, that will remade .h files. 
 
 
-##Resources:
+## Resources:
 
 [https://www.boredapi.com/documentation]: https://www.boredapi.com/documentation	"API Docs"
 
